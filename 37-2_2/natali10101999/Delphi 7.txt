@@ -1,0 +1,54 @@
+unit Unit1;
+
+interface
+
+uses
+  Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
+  Dialogs, StdCtrls;
+
+type
+  TForm1 = class(TForm)
+    Edit1: TEdit;
+    Button1: TButton;
+    Edit2: TEdit;
+    Label1: TLabel;
+    procedure Button1Click(Sender: TObject);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  Form1: TForm1;
+
+implementation
+
+{$R *.dfm}
+
+procedure TForm1.Button1Click(Sender: TObject);
+
+const s= '!#/()=?\*:.-_' +
+
+  'ABCDEFGHIJKLMabcdefghijklm' +
+
+  '0123456789' +
+
+  'NOPQRSTUVWXYZnopqrstuvwxyz';
+
+var
+i,n :integer;
+begin
+n:=Strtoint(Edit2.TExt);
+
+edit1.Clear();
+
+for i:=1 TO n DO
+//while i<>n do
+
+
+edit1.Text:=(edit1.Text+s[random(length(s)+1)+1] + #10#13);
+
+end;
+
+end.
